@@ -1,8 +1,8 @@
 import {Figther} from "./figther";
 
 export class StarWars extends Figther {
-  constructor(nombre: string, peso: number, altura: number, private colorSable: "Azul" | "Rojo" | "Verde", estadisticasBasicas: number[]) {
-    super(nombre, peso, altura, estadisticasBasicas);
+  constructor(nombre: string, peso: number, altura: number, private colorSable: "Azul" | "Rojo" | "Verde", estadisticasBasicas: number[], catchingPhrase: string) {
+    super(nombre, peso, altura, estadisticasBasicas, catchingPhrase);
   }
 
   /**

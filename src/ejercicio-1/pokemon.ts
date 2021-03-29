@@ -1,8 +1,8 @@
 import {Figther} from "./figther";
 
 export class Pokemon extends Figther {
-  constructor(nombre: string, peso: number, altura: number, private tipo: string, estadisticasBasicas: number[]) {
-    super(nombre, peso, altura, estadisticasBasicas);
+  constructor(nombre: string, peso: number, altura: number, private tipo: string, estadisticasBasicas: number[], catchingPhrase: string) {
+    super(nombre, peso, altura, estadisticasBasicas, catchingPhrase);
   }
 
   /**

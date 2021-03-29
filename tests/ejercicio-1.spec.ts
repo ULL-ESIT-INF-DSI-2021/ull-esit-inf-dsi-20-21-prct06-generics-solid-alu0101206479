@@ -5,13 +5,14 @@ import {Marvel} from '../src/ejercicio-1/marvel';
 import {DC} from '../src/ejercicio-1/dc';
 import {StarWars} from '../src/ejercicio-1/starwars';
 import {DragonBall} from '../src/ejercicio-1/dragonball';
+import {Combat} from '../src/ejercicio-1/combat';
 
 describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
-  const Venusaur = new Pokemon("Venusaur", 100, 2.0, "Planta", [82, 83, 80, 80]);
-  const Ironman = new Marvel("Iron Man", 110, 1.92, "Superheroe", [85, 80, 110, 150]);
-  const Batman = new DC("Batman", 90, 1.90, "Superheroe", [90, 85, 120, 160]);
-  const Yoda = new StarWars("Yoda", 30, 1, "Verde", [110, 70, 150, 130]);
-  const Goku = new DragonBall("Goku", 93, 1.85, 85, [105, 105, 140, 150]);
+  const Venusaur = new Pokemon("Venusaur", 100, 2.0, "Planta", [82, 83, 80, 80], "SAURRR!");
+  const Ironman = new Marvel("Iron Man", 110, 1.92, "Superheroe", [85, 80, 110, 150], "I am Iron Man");
+  const Batman = new DC("Batman", 90, 1.90, "Superheroe", [90, 85, 120, 160], "I'm the Goddamn Batman");
+  const Yoda = new StarWars("Yoda", 30, 1, "Verde", [110, 70, 150, 130], "Do. Or do not. There is no try");
+  const Goku = new DragonBall("Goku", 93, 1.85, 85, [105, 105, 140, 150], "Yo! I'm Goku!");
   describe('Clase Figther y clases hijas', () => {
     describe('Se pueden instanciar los luchadores', () => {
       it('expect(Venusaur).not.be.equal(null);', () => {
@@ -70,6 +71,69 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
         Batman.setHP(15);
         expect(Batman.getEstadisticasBasicas().hp).to.be.equal(15);
         Batman.setHP(170);
+      });
+    });
+  });
+
+  const combate1 = new Combat(Venusaur, Ironman);
+  const combate2 = new Combat(Ironman, Venusaur);
+  const combate3 = new Combat(Batman, Goku);
+  const combate4 = new Combat(Goku, Yoda);
+  const combate5 = new Combat(Ironman, Goku);
+  describe('Clase Combat', () => {
+    describe('Se puede instanciar objetos Combat', () => {
+      it('expect(combate1).not.be.equal(null);', () => {
+        expect(combate1).not.be.equal(null);
+      });
+      it('expect(combate2).not.be.equal(null);', () => {
+        expect(combate2).not.be.equal(null);
+      });
+      it('expect(combate3).not.be.equal(null);', () => {
+        expect(combate3).not.be.equal(null);
+      });
+      it('expect(combate4).not.be.equal(null);', () => {
+        expect(combate4).not.be.equal(null);
+      });
+    });
+
+    describe('Funcionan los getters y setters', () => {
+      it('expect(combate1.getContrincante1()).to.be.equal(Venusaur);', () => {
+        expect(combate1.getContrincante1()).to.be.equal(Venusaur);
+      });
+      it('combate1.setContricante1(Yoda);', () => {
+        combate1.setContricante1(Yoda);
+        expect(combate1.getContrincante1()).to.be.equal(Yoda);
+        combate1.setContricante1(Venusaur);
+      });
+      it('expect(combate1.getContrincante2()).to.be.equal(Ironman);', () => {
+        expect(combate1.getContrincante2()).to.be.equal(Ironman);
+      });
+      it('combate1.setContricante2(Goku);', () => {
+        combate1.setContricante2(Goku);
+        expect(combate1.getContrincante2()).to.be.equal(Goku);
+        combate1.setContricante2(Ironman);
+      });
+    });
+
+
+    describe('Funciona la funcion dañoAtaque(personajeAtacante)', () => {
+      it('expect(Math.trunc(combate1.dañoAtaque(1))).to.be.equal(102);', () => {
+        expect(Math.trunc(combate1.dañoAtaque(1))).to.be.equal(102);
+      });
+      it('expect(Math.trunc(combate1.dañoAtaque(2))).to.be.equal(25);', () => {
+        expect(Math.trunc(combate1.dañoAtaque(2))).to.be.equal(25);
+      });
+      it('expect(Math.trunc(combate2.dañoAtaque(1))).to.be.equal(25);', () => {
+        expect(Math.trunc(combate2.dañoAtaque(1))).to.be.equal(25);
+      });
+      it('expect(Math.trunc(combate3.dañoAtaque(2))).to.be.equal(123);', () => {
+        expect(Math.trunc(combate3.dañoAtaque(2))).to.be.equal(123);
+      });
+      it('expect(Math.trunc(combate4.dañoAtaque(1))).to.be.equal(37);', () => {
+        expect(Math.trunc(combate4.dañoAtaque(1))).to.be.equal(37);
+      });
+      it('expect(Math.trunc(combate5.dañoAtaque(2))).to.be.equal(65);', () => {
+        expect(Math.trunc(combate5.dañoAtaque(2))).to.be.equal(65);
       });
     });
   });

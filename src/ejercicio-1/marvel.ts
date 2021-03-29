@@ -1,8 +1,8 @@
 import {Figther} from "./figther";
 
 export class Marvel extends Figther {
-  constructor(nombre: string, peso: number, altura: number, private tipo: "Malvado" | "Superheroe", estadisticasBasicas: number[]) {
-    super(nombre, peso, altura, estadisticasBasicas);
+  constructor(nombre: string, peso: number, altura: number, private tipo: "Malvado" | "Superheroe", estadisticasBasicas: number[], catchingPhrase: string) {
+    super(nombre, peso, altura, estadisticasBasicas, catchingPhrase);
   }
 
   /**

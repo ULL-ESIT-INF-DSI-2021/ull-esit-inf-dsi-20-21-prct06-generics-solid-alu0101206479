@@ -9,7 +9,7 @@ export abstract class Figther {
     hp: 0,
   };
 
-  constructor(private nombre: string, private peso: number, private altura: number, estadisticasBasicas: number[]) {
+  constructor(private nombre: string, private peso: number, private altura: number, estadisticasBasicas: number[], private catchingPhrase: string) {
     this.estadisticasBasicas.ataque = estadisticasBasicas[0];
     this.estadisticasBasicas.defensa = estadisticasBasicas[1];
     this.estadisticasBasicas.velocidad = estadisticasBasicas[2];

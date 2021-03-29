@@ -72,12 +72,15 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
         expect(Batman.getEstadisticasBasicas().hp).to.be.equal(15);
         Batman.setHP(170);
       });
+      it('expect(Ironman.getCatchingPhrase()).to.be.equal("I am Iron Man");', () => {
+        expect(Ironman.getCatchingPhrase()).to.be.equal("I am Iron Man");
+      });
     });
   });
 
   const combate1 = new Combat(Venusaur, Ironman);
   const combate2 = new Combat(Ironman, Venusaur);
-  const combate3 = new Combat(Batman, Goku);
+  const combate3 = new Combat(Batman, Yoda);
   const combate4 = new Combat(Goku, Yoda);
   const combate5 = new Combat(Ironman, Goku);
   describe('Clase Combat', () => {
@@ -115,7 +118,6 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
       });
     });
 
-
     describe('Funciona la funcion dañoAtaque(personajeAtacante)', () => {
       it('expect(Math.trunc(combate1.dañoAtaque(1))).to.be.equal(102);', () => {
         expect(Math.trunc(combate1.dañoAtaque(1))).to.be.equal(102);
@@ -126,14 +128,25 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
       it('expect(Math.trunc(combate2.dañoAtaque(1))).to.be.equal(25);', () => {
         expect(Math.trunc(combate2.dañoAtaque(1))).to.be.equal(25);
       });
-      it('expect(Math.trunc(combate3.dañoAtaque(2))).to.be.equal(123);', () => {
-        expect(Math.trunc(combate3.dañoAtaque(2))).to.be.equal(123);
+      it('expect(Math.trunc(combate3.dañoAtaque(2))).to.be.equal(32);', () => {
+        expect(Math.trunc(combate3.dañoAtaque(2))).to.be.equal(32);
       });
       it('expect(Math.trunc(combate4.dañoAtaque(1))).to.be.equal(37);', () => {
         expect(Math.trunc(combate4.dañoAtaque(1))).to.be.equal(37);
       });
       it('expect(Math.trunc(combate5.dañoAtaque(2))).to.be.equal(65);', () => {
         expect(Math.trunc(combate5.dañoAtaque(2))).to.be.equal(65);
+      });
+    });
+
+    describe('Funciona la funcion start()', () => {
+      it('combate3.start();', () => {
+        console.log("Simulación del combate 3\n");
+        combate3.start();
+      });
+      it('combate5.start();', () => {
+        console.log("Simulación del combate 5\n");
+        combate5.start();
       });
     });
   });

@@ -269,4 +269,51 @@ export class Combat {
 
     return daño;
   }
+
+  /**
+   * ```typescript
+   * // Ejemplo de llamada
+   *  combate.start();
+   * ```
+   * Función que simula el combate Pokemon
+   */
+  public start() {
+    let i: number = 1;
+    let daño: number = 0;
+    console.log(`${this.contrincante1.getNombre()}(HP: ${this.contrincante1.getEstadisticasBasicas().hp}) vs ${this.contrincante2.getNombre()}(HP: ${this.contrincante2.getEstadisticasBasicas().hp})\n`);
+
+    while (1) {
+      if (i == 1) {
+        console.log(`Ataca ${this.contrincante1.getNombre()}\n${this.contrincante1.getCatchingPhrase()}`);
+        daño = Math.floor(this.dañoAtaque(i));
+        if (this.contrincante2.getEstadisticasBasicas().hp-daño > 0) {
+          this.contrincante2.setHP(this.contrincante2.getEstadisticasBasicas().hp-daño);
+        } else {
+          this.contrincante2.setHP(0);
+        }
+        console.log(`¡BOOOOOOM! ${this.contrincante1.getNombre()} hizo ${daño} de daño, dejando a ${this.contrincante2.getNombre()} con un HP de ${this.contrincante2.getEstadisticasBasicas().hp}\n`);
+        i = 2;
+
+        if (this.contrincante2.getEstadisticasBasicas().hp == 0) {
+          console.log(`Ha acabado el combate, campeón ¡¡¡¡¡${this.contrincante1.getNombre()}!!!!\n`);
+          break;
+        }
+      } else {
+        console.log(`Ataca ${this.contrincante2.getNombre()}\n${this.contrincante2.getCatchingPhrase()}`);
+        daño = Math.floor(this.dañoAtaque(i));
+        if (this.contrincante1.getEstadisticasBasicas().hp-daño > 0) {
+          this.contrincante1.setHP(this.contrincante1.getEstadisticasBasicas().hp-daño);
+        } else {
+          this.contrincante1.setHP(0);
+        }
+        console.log(`¡BOOOOOOM! ${this.contrincante2.getNombre()} hizo ${daño} de daño, dejando a ${this.contrincante1.getNombre()} con un HP de ${this.contrincante1.getEstadisticasBasicas().hp}\n`);
+        i = 1;
+
+        if (this.contrincante1.getEstadisticasBasicas().hp == 0) {
+          console.log(`Ha acabado el combate, campeón ¡¡¡¡¡${this.contrincante2.getNombre()}!!!!\n`);
+          break;
+        }
+      }
+    }
+  }
 }

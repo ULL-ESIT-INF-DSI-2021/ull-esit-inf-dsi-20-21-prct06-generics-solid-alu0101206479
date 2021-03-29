@@ -19,7 +19,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.getNombre();
+   *  personaje.getNombre();
    * ```
    * Función que retorna el nombre del luchador
    * @return El atributo nombre
@@ -31,7 +31,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setNombre("Charizard");
+   *  personaje.setNombre("Personaje");
    * ```
    * Función para cambiar el nombre del luchador
    * @param nombre El nuevo nombre que tendrá el luchador
@@ -43,7 +43,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.getPeso();
+   *  personaje.getPeso();
    * ```
    * Función que retorna el peso del luchador
    * @return El atributo peso
@@ -55,7 +55,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setPeso(75);
+   *  personaje.setPeso(75);
    * ```
    * Función para cambiar el peso del luchador
    * @param peso El nuevo peso que tendrá el luchador
@@ -67,7 +67,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.getAltura();
+   *  personaje.getAltura();
    * ```
    * Función que retorna la altura del luchador
    * @return El atributo altura
@@ -79,7 +79,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setAltura(1.78);
+   *  personaje.setAltura(1.78);
    * ```
    * Función para cambiar la altura del luchador
    * @param altura La nueva altura que tendrá el luchador
@@ -91,7 +91,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.getEstadisticasBasicas();
+   *  personaje.getEstadisticasBasicas();
    * ```
    * Función que retorna las estadisticas básicas (ataque, defensa, velocidad, HP) del luchador
    * @return El atributo estadisticasBasicas
@@ -103,7 +103,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setAtaque(80);
+   *  personaje.setAtaque(80);
    * ```
    * Función para cambiar el ataque del luchador
    * @param ataque El nuevo ataque que tendrá el luchador
@@ -115,7 +115,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setDefensa(70);
+   *  personaje.setDefensa(70);
    * ```
    * Función para cambiar la defensa del luchador
    * @param defensa La nueva defensa que tendrá el luchador
@@ -127,7 +127,7 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setVelocidad(80);
+   *  personaje.setVelocidad(80);
    * ```
    * Función para cambiar la velocidad del luchador
    * @param velocidad La nueva velocidad que tendrá el luchador
@@ -139,12 +139,36 @@ export abstract class Figther {
   /**
    * ```typescript
    * // Ejemplo de llamada
-   *  pokemon.setHP(90);
+   *  personaje.setHP(90);
    * ```
    * Función para cambiar el hp del luchador
    * @param hp El nuevo HP que tendrá el luchador
    */
   public setHP(hp: number) {
     this.estadisticasBasicas.hp = hp;
+  }
+
+  /**
+   * ```typescript
+   * // Ejemplo de llamada
+   *  personaje.getCatchingPhrase();
+   * ```
+   * Función que retorna la frase típica del luchador
+   * @return El atributo catchingPhrase
+   */
+  public getCatchingPhrase() {
+    return this.catchingPhrase;
+  }
+
+  /**
+     * ```typescript
+     * // Ejemplo de llamada
+     *  personaje.setCatchingPhrase("Soy un personaje");
+     * ```
+     * Función para cambiar la frase típica del luchador
+     * @param catchingPhrase La nueva frase típica que tendrá el luchador
+     */
+  public setCatchingPhrase(catchingPhrase: string) {
+    this.catchingPhrase = catchingPhrase;
   }
 }

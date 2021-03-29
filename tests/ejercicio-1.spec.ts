@@ -1,13 +1,18 @@
 import 'mocha';
 import {expect} from 'chai';
 import {Pokemon} from '../src/ejercicio-1/pokemon';
+import {Marvel} from '../src/ejercicio-1/marvel';
 
 describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
   const Venusaur = new Pokemon("Venusaur", 100, 2.0, "Planta", [82, 83, 80, 80]);
-  describe('Clase Pokemon', () => {
-    describe('Se puede instanciar un Pokemon', () => {
+  const Ironman = new Marvel("Iron Man", 110, 1.92, "Superheroe", [85, 80, 110, 150]);
+  describe('Clase Figther y clases hijas', () => {
+    describe('Se pueden instanciar los luchadores', () => {
       it('expect(Venusaur).not.be.equal(null);', () => {
         expect(Venusaur).not.be.equal(null);
+      });
+      it('expect(Ironman).not.be.equal(null);', () => {
+        expect(Ironman).not.be.equal(null);
       });
     });
 
@@ -16,7 +21,7 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
         expect(Venusaur.getNombre()).to.be.equal("Venusaur");
       });
       it('expect(Venusaur.getPeso()).to.be.equal(100);', () => {
-        expect(Venusaur.getPeso()).to.be.equal(100);
+        expect(Ironman.getPeso()).to.be.equal(110);
       });
       it('Venusaur.setPeso(50);', () => {
         Venusaur.setPeso(50);

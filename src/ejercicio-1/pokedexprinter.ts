@@ -18,6 +18,13 @@ export class PokedexPrinter {
    */
   constructor(private pokedex: Pokedex) {}
 
+  /**
+   * ```typescript
+   * // Ejemplo de llamada
+   *  pokedex.mostrar();
+   * ```
+   * Función que muestra en una tabla los personajes de la Pokedex
+   */
   public mostrar() {
     console.table(this.pokedex.getPersonajes(), ["nombre", "peso", "altura", "catchingPhrase"]);
   }

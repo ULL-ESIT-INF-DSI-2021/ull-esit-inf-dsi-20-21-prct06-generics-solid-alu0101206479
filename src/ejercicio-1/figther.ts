@@ -1,3 +1,10 @@
+/**
+ * ```typescript
+ * // Ejemplo de herencia
+ *  class DC extends Figther {}
+ * ```
+ * Clase abstracta que permite que un contendiente pueda luchar. Será la clase padre de clases que representan distintos universos que quieran luchar.
+ */
 export abstract class Figther {
   /**
    * Atributo que representa las estadisticas básicas (ataque, defensa, velocidad, HP) del luchador
@@ -9,6 +16,17 @@ export abstract class Figther {
     hp: 0,
   };
 
+  /**
+   * ```typescript
+   * // Ejemplo de herencia de atributos
+   *  super(nombre, peso, altura, estadisticasBasicas, catchingPhrase);
+   * ```
+   * Constructor de la clase Figther
+   * @param nombre Nombre del personaje luchador
+   * @param peso Peso del personaje luchador
+   * @param altura Altura del personaje luchador
+   * @param estadisticasBasicas Vector de estadisticas básicas del personaje luchador, primera posicion representa ataque, segunda defensa, tercera velocidad y cuarta HP
+   */
   constructor(private nombre: string, private peso: number, private altura: number, estadisticasBasicas: number[], private catchingPhrase: string) {
     this.estadisticasBasicas.ataque = estadisticasBasicas[0];
     this.estadisticasBasicas.defensa = estadisticasBasicas[1];

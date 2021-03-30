@@ -6,6 +6,7 @@ import {DC} from '../src/ejercicio-1/dc';
 import {StarWars} from '../src/ejercicio-1/starwars';
 import {DragonBall} from '../src/ejercicio-1/dragonball';
 import {Combat} from '../src/ejercicio-1/combat';
+import {Pokedex} from '../src/ejercicio-1/pokedex';
 
 describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
   const Venusaur = new Pokemon("Venusaur", 100, 2.0, "Planta", [82, 83, 80, 80], "SAURRR!");
@@ -147,6 +148,33 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
       it('combate5.start();', () => {
         console.log("Simulación del combate 5\n");
         combate5.start();
+      });
+    });
+  });
+
+  const pokedex = new Pokedex([Venusaur, Ironman, Goku, Yoda]);
+  describe('Clase Pokedex', () => {
+    describe('Se puede instanciar un objeto Pokedex', () => {
+      it('expect(pokedex).not.be.equal(null);', () => {
+        expect(pokedex).not.be.equal(null);
+      });
+    });
+
+    describe('Funciona el get de el contenido de la pokedex', () => {
+      it('expect(pokedex.getPersonajes()).to.deep.equal([Venusaur, Ironman, Goku, Yoda]);', () => {
+        expect(pokedex.getPersonajes()).to.deep.equal([Venusaur, Ironman, Goku, Yoda]);
+      });
+    });
+
+    describe('Funciona añadir y quitar personajes de la Pokedex', () => {
+      it('pokedex.añadirPersonaje(Batman);', () => {
+        pokedex.añadirPersonaje(Batman);
+        expect(pokedex.getPersonajes()).to.deep.equal([Venusaur, Ironman, Goku, Yoda, Batman]);
+      });
+
+      it('pokedex.quitarPersonaje(Goku);', () => {
+        pokedex.quitarPersonaje(Goku);
+        expect(pokedex.getPersonajes()).to.deep.equal([Venusaur, Ironman, Yoda, Batman]);
       });
     });
   });

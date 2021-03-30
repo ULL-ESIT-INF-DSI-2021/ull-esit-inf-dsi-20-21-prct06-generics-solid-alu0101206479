@@ -415,3 +415,33 @@ Las pruebas de este ejercicio se pueden observar en el siguiente enlace:
 Y la salida de estas pruebas al ejecutar `npm run test` debería ser la siguiente:
 
   ![Salida del npm run test del ejercicio 3](src/pruebaejercicio3.png)
+  
+  
+
+
+
+#### Conclusiones
+Como conclusión a la práctica, me ha parecido bastante interesante retomar el uso de "Plantillas" con las clases e interfaces genéricas, ya que lo aprendí en C++ y considero que es algo bastante complejo de entender. Pero creo que lo he hecho todo correctamente y con paciencia, ya que ha sido una práctica bastante larga.
+
+Poco a poco viendo diversos artículos me voy dando cuenta de que TypeScript es muy útil en la actualidad y me alegra mucho aprender a usarlo cada vez más.
+
+
+
+
+#### Bibliografía
+
+Nombre | Enlaces
+-------|--------
+Enunciado de la práctica | [https://ull-esit-inf-dsi-2021.github.io/prct06-generics-solid/](https://ull-esit-inf-dsi-2021.github.io/prct06-generics-solid/)
+Apuntes de la asignatura | [https://ull-esit-inf-dsi-2021.github.io/typescript-theory/](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/)
+TypeDoc | [https://typedoc.org/](https://typedoc.org/)
+Mocha | [https://mochajs.org/](https://mochajs.org/)
+Chai | [https://www.chaijs.com/](https://www.chaijs.com/)
+Tutorial de creación de la estructura básica del proyecto | [https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html)
+Vídeo de ejemplo de instalación y configuración de TypeDoc en un proyecto TypeScript | [https://drive.google.com/file/d/19LLLCuWg7u0TjjKz9q8ZhOXgbrKtPUme/view](https://drive.google.com/file/d/19LLLCuWg7u0TjjKz9q8ZhOXgbrKtPUme/view)
+Repositorio GitHub con el ejemplo de configuración de TypeDoc en un proyecto TypeScript | [https://github.com/ULL-ESIT-INF-DSI-2021/doc-test](https://github.com/ULL-ESIT-INF-DSI-2021/doc-test)
+Vídeo de ejemplo de instalación y configuración de Mocha y Chai en un proyecto TypeScript | [https://drive.google.com/file/d/1-z1oNOZP70WBDyhaaUijjHvFtqd6eAmJ/view](https://drive.google.com/file/d/1-z1oNOZP70WBDyhaaUijjHvFtqd6eAmJ/view)
+Repositorio GitHub con el ejemplo de configuración de Mocha y Chai en un proyecto TypeScript | [https://github.com/ULL-ESIT-INF-DSI-2021/doc-test](https://github.com/ULL-ESIT-INF-DSI-2021/doc-test)
+Instanbul | [https://istanbul.js.org/](https://istanbul.js.org/)
+Issues de Github | [https://guides.github.com/features/issues/](https://guides.github.com/features/issues/)
+Práctica 5 | [https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/)

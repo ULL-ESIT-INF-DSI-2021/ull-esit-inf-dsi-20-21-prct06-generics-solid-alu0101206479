@@ -140,7 +140,7 @@ En este ejercicio deberemos crear las siguientes clases:
       * `setKi(ki: string)`: Función para cambiar el atributo privado `ki`
 
 
-  * Clase Combat: Es la clase que representa un combate entre personajes de distintos universos, su código lo podremos observar en el siguiente enlace:
+  * Clase `Combat`: Es la clase que representa un combate entre personajes de distintos universos, su código lo podremos observar en el siguiente enlace:
 
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/combat.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/combat.ts)
       
@@ -157,7 +157,7 @@ En este ejercicio deberemos crear las siguientes clases:
       * `start()`: Función que muestra por pantalla la simulación del combate (También se muestran la catching phrase de los personajes cada vez que atacan), esto se hace a través de un bucle `while` que se va a ejecutar hasta que a uno de los dos Pokemons del combate se le acabe el hp (Primero ataca un Pokemon y después el otro).
 
 
-  * Clase Pokedex: Es la clase que representa a la Pokedex (Registro de todos los personajes), su código lo podremos observar en el siguiente enlace:
+  * Clase `Pokedex`: Es la clase que representa a la Pokedex (Registro de todos los personajes), su código lo podremos observar en el siguiente enlace:
 
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/pokedex.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/pokedex.ts)
       
@@ -170,7 +170,6 @@ En este ejercicio deberemos crear las siguientes clases:
       * `quitarPersonaje(personaje: (Pokemon | Marvel | DC | StarWars | DragonBall))`: Función para quitar un personaje de la Pokedex (se quita un personaje del atributo `personajes`).
 
 
-
   * Clase `PokedexPrinter`: Es una clase que servirá para imprimir una Pokédex, esta clase se hizo para cumplir el **principio S (Single responsibility principle) de los principios SOLID** y no asignarle varias responsabilidades a la clase `Pokedex`. Su código lo podremos observar en el siguiente enlace:
 
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/pokedex.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/pokedex.ts)
@@ -180,3 +179,120 @@ En este ejercicio deberemos crear las siguientes clases:
 
     Y contendrá las siguiente funcion pública:
       * `mostrar()`: Función que muestra en una tabla los personajes de la Pokedex
+
+
+Las pruebas de este ejercicio se pueden observar en el siguiente enlace:
+
+  [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/tests/ejercicio-1.spec.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/tests/ejercicio-1.spec.ts)
+  
+Y la salida de estas pruebas al ejecutar `npm run test` debería ser la siguiente:
+
+  ![Salida del npm run test del ejercicio 1](src/pruebaejercicio1.png)
+  
+  
+  
+##### Ejercicio 2 - Conversor de unidades
+En este ejercicio deberemos de crear las siguientes clases e interfaces:
+  * Interfaz genérica `isConvertible`: Interfaz genérica que sirve para describir la forma de una magnitud entre la que se puede hacer conversión entre unidades, su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/isconvertible.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/isconvertible.ts)
+      
+    Esta interfaz contendrá los siguientes atributos:
+      * `cantidad`: Cantidad de la unidad de la magnitud (Number)
+      * `unidad`: Unidad de la magnitud (T)
+
+    Y contendrá la función:
+      * `conversor(uResultado: T)`: Función que servirá para convertir de la unidad `unidad` a la unidad `uResultado`
+
+
+  * Clase `Velocidad`: Clase que representa una medida de velocidad y a través de la cual se puede hacer la conversión entre unidades de velocidad, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/velocidad.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/velocidad.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de velocidad (Number)
+      * `unidad`: Unidad en la que esta medida la velocidad (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de velocidad y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Millas/h a Kilometros/h o de Kilometros/h a Millas/h). También cabe destacar que si se pasa por parámetro otra unidad que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+  * Clase `Masa`: Clase que representa una medida de masa y a través de la cual se puede hacer la conversión entre unidades de masa, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/masa.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/masa.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de masa (Number)
+      * `unidad`: Unidad en la que esta medida la masa (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de masa y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Kilogramos a Gramos o de Gramos a Kilogramos). También cabe destacar que si se intenta hacer la conversión entre otras unidades que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+  * Clase `Longitud`: Clase que representa una medida de longitud y a través de la cual se puede hacer la conversión entre unidades de longitud, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/longitud.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/longitud.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de longitud (Number)
+      * `unidad`: Unidad en la que esta medida la longitud (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de longitud y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Metros a Centímetros o de Centímetros a Metros). También cabe destacar que si se intenta hacer la conversión entre otras unidades que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+  * Clase `Tiempo`: Clase que representa una medida de tiempo y a través de la cual se puede hacer la conversión entre unidades de tiempo, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/tiempo.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/tiempo.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de tiempo (Number)
+      * `unidad`: Unidad en la que esta medido el tiempo (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de tiempo y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Horas a Minutos o de Minutos a Horas). También cabe destacar que si se intenta hacer la conversión entre otras unidades que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+  * Clase `Temperatura`: Clase que representa una medida de temperatura y a través de la cual se puede hacer la conversión entre unidades de temperatura, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/temperatura.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/temperatura.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de temperatura (Number)
+      * `unidad`: Unidad en la que esta medida la temperatura (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de temperatura y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Grados Celsius a Grados Fahrenheit o de Grados Fahrenheit a Grados Celsius). También cabe destacar que si se intenta hacer la conversión entre otras unidades que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+  * Clase `Fuerza`: Clase que representa una medida de fuerza y a través de la cual se puede hacer la conversión entre unidades de fuerza, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/fuerza.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/fuerza.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de fuerza (Number)
+      * `unidad`: Unidad en la que esta medida la fuerza (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de fuerza y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Kilopondios a Newtons o de Newtons a Kilopondios). También cabe destacar que si se intenta hacer la conversión entre otras unidades que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+  * Clase `Volumen`: Clase que representa una medida de volumen y a través de la cual se puede hacer la conversión entre unidades de volumen, esta clase implementa la interfaz `isConvertible<string>`. Su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/volumen.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-2/volumen.ts)
+      
+    Esta clase contendrá los siguientes atributos públicos (extraídos de la interfaz):
+      * `cantidad`: Cantidad de volumen (Number)
+      * `unidad`: Unidad en la que esta medido el volumen (String)
+
+    Y contendrá las siguiente funcion (extraída de la interfaz):
+      * `conversor(uResultado: string)`: Función que realiza la conversión entre unidades de volumen y se le pasa como parámetro la unidad a la que se quiere llegar (Se puede convertir de Litros a Mililitros o de Mililitros a Litros). También cabe destacar que si se intenta hacer la conversión entre otras unidades que no sean las mencionadas, se mostrará un error por pantalla y no se hará la conversión.
+
+
+Las pruebas de este ejercicio se pueden observar en el siguiente enlace:
+
+  [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/tests/ejercicio-2.spec.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/tests/ejercicio-2.spec.ts)
+  
+Y la salida de estas pruebas al ejecutar `npm run test` debería ser la siguiente:
+
+  ![Salida del npm run test del ejercicio 2](src/pruebaejercicio2.png)

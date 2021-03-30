@@ -96,7 +96,7 @@ En este ejercicio deberemos crear las siguientes clases:
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/marvel.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/marvel.ts)
       
     Esta clase al ser hija de la clase `Figther`, se heredarán en el costructor a través de la función `super` todos los atributos de la clase padre (`nombre`, `peso`, `altura`, `estadisticasBasicas`, `catchingPhrase`). Pero a parte la clase `Marvel` tambien tendrá el atributo privado:
-      * `tipo`: Representará el tipo de personaje del personaje Marvel, puede ser malvado o superhéroe ("Malvado" | "Superheroe").
+      * `tipo`: Representará el tipo de personaje del personaje Marvel, puede ser malvado o superhéroe ("Malvado" o "Superheroe").
 
     Y contendrá las siguientes funciones públicas:
       * `getTipo()`: Función para obtener el atributo privado `tipo`
@@ -108,7 +108,7 @@ En este ejercicio deberemos crear las siguientes clases:
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/dc.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/dc.ts)
       
     Esta clase al ser hija de la clase `Figther`, se heredarán en el costructor a través de la función `super` todos los atributos de la clase padre (`nombre`, `peso`, `altura`, `estadisticasBasicas`, `catchingPhrase`). Pero a parte la clase `DC` tambien tendrá el atributo privado:
-      * `tipo`: Representará el tipo de personaje del personaje DC Comics, puede ser malvado o superhéroe ("Malvado" | "Superheroe").
+      * `tipo`: Representará el tipo de personaje del personaje DC Comics, puede ser malvado o superhéroe ("Malvado" o "Superheroe").
 
     Y contendrá las siguientes funciones públicas:
       * `getTipo()`: Función para obtener el atributo privado `tipo`
@@ -120,7 +120,7 @@ En este ejercicio deberemos crear las siguientes clases:
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/starwars.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/starwars.ts)
       
     Esta clase al ser hija de la clase `Figther`, se heredarán en el costructor a través de la función `super` todos los atributos de la clase padre (`nombre`, `peso`, `altura`, `estadisticasBasicas`, `catchingPhrase`). Pero a parte la clase `StarWars` tambien tendrá el atributo privado:
-      * `colorSable`: Representará el color del sable del personaje de Star Wars, puede ser azul, rojo o verde ("Azul" | "Rojo" | "Verde").
+      * `colorSable`: Representará el color del sable del personaje de Star Wars, puede ser azul, rojo o verde ("Azul" o "Rojo" o "Verde").
 
     Y contendrá las siguientes funciones públicas:
       * `getColorSable()`: Función para obtener el atributo privado `colorSable`
@@ -162,7 +162,7 @@ En este ejercicio deberemos crear las siguientes clases:
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/pokedex.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-1/pokedex.ts)
       
     Esta clase contendrá el siguiente atributo privado
-      * `personajes`: Todos los personajes que tendrá la Pokédex ((Pokemon | Marvel | DC | StarWars | DragonBall)[])
+      * `personajes`: Todos los personajes que tendrá la Pokédex ((Pokemon o Marvel o DC o StarWars o DragonBall)[])
 
     Y contendrá las siguientes funciones públicas:
       * `getPersonajes()`: Función para obtener el atributo privado `personajes`

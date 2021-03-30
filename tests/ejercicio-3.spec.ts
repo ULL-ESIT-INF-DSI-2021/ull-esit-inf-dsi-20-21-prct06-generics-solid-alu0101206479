@@ -4,6 +4,8 @@ import {serie} from '../src/ejercicio-3/seriecollection';
 import {SerieCollection} from '../src/ejercicio-3/seriecollection';
 import {pelicula} from '../src/ejercicio-3/peliculacollection';
 import {PeliculaCollection} from '../src/ejercicio-3/peliculacollection';
+import {documental} from '../src/ejercicio-3/documentalcollection';
+import {DocumentalCollection} from '../src/ejercicio-3/documentalcollection';
 
 describe('Pruebas del Ejercicio 3 - DSIflix', () => {
   const serie1 : serie = {nombre: "Prison Break", añoPublicacion: 2005, temporadas: 5};
@@ -94,7 +96,7 @@ describe('Pruebas del Ejercicio 3 - DSIflix', () => {
         expect(peliculaColeccion.busqueda("Año de publicación", 2021)).to.deep.equal([pelicula5]);
       });
 
-      it('console.log(`Búsqueda de la pelicula La Gran Apuesta\n`);', () => {
+      it('peliculaColeccion.busqueda("Nombre", "La Gran Apuesta")`);', () => {
         console.log(`Búsqueda de la pelicula La Gran Apuesta\n`);
         expect(peliculaColeccion.busqueda("Nombre", "La Gran Apuesta")).to.deep.equal([pelicula3]);
       });
@@ -102,6 +104,56 @@ describe('Pruebas del Ejercicio 3 - DSIflix', () => {
       it('peliculaColeccion.busqueda("Largas", undefined)', () => {
         console.log(`Búsqueda de peliculas largas\n`);
         expect(peliculaColeccion.busqueda("Largas", undefined)).to.deep.equal([pelicula1]);
+      });
+    });
+  });
+
+  const documental1 : documental = {nombre: "Rol & Rol", añoPublicacion: 2021, duracionMinutos: 89};
+  const documental2 : documental = {nombre: "Monográfico: Desiertos", añoPublicacion: 2018, duracionMinutos: 29};
+  const documental3 : documental = {nombre: "Persia, la historia de Irán", añoPublicacion: 2021, duracionMinutos: 51};
+  const documental4 : documental = {nombre: "Visto y no visto", añoPublicacion: 2020, duracionMinutos: 29};
+  const documental5 : documental = {nombre: "El abismo libio", añoPublicacion: 2021, duracionMinutos: 57};
+  const documentalColeccion = new DocumentalCollection([documental1, documental2, documental3, documental4]);
+  describe('Clase PeliculaCollection', () => {
+    describe('Funciona el get de la colección de documentales', () => {
+      it('expect(documentalColeccion.getColeccion()).to.deep.equal([documental1, documental2, documental3, documental4]);', () => {
+        expect(documentalColeccion.getColeccion()).to.deep.equal([documental1, documental2, documental3, documental4]);
+      });
+    });
+
+    describe('Funciona añadir y quitar documentales de la colección', () => {
+      it('documentalColeccion.añadirEmision(documental5);', () => {
+        documentalColeccion.añadirEmision(documental5);
+        expect(documentalColeccion.getColeccion()).to.deep.equal([documental1, documental2, documental3, documental4, documental5]);
+      });
+
+      it('documentalColeccion.quitarEmision(documental3);', () => {
+        documentalColeccion.quitarEmision(documental3);
+        expect(documentalColeccion.getColeccion()).to.deep.equal([documental1, documental2, documental4, documental5]);
+      });
+    });
+
+    describe('Mostrar colección', () => {
+      it('documentalColeccion.imprimirColeccion();', () => {
+        console.log(`Colección de documentales\n`);
+        documentalColeccion.imprimirColeccion();
+      });
+    });
+
+    describe('Buscar documentales en la colección', () => {
+      it('documentalColeccion.busqueda("Año de publicación", 2021);', () => {
+        console.log(`Búsqueda de documentales publicados en 2021\n`);
+        expect(documentalColeccion.busqueda("Año de publicación", 2021)).to.deep.equal([documental1, documental5]);
+      });
+
+      it('documentalColeccion.busqueda("Nombre", "Rol & Rol")', () => {
+        console.log(`Búsqueda del documental Rol & Rol\n`);
+        expect(documentalColeccion.busqueda("Nombre", "Rol & Rol")).to.deep.equal([documental1]);
+      });
+
+      it('documentalColeccion.busqueda("Cortos", undefined)', () => {
+        console.log(`Búsqueda de documentales cortos\n`);
+        expect(documentalColeccion.busqueda("Cortos", undefined)).to.deep.equal([documental2, documental4]);
       });
     });
   });

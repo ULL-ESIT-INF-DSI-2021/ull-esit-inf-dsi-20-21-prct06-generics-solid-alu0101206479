@@ -1,8 +1,8 @@
-import {busquedaStreamable } from './busquedastreamable';
-import {imprimirStreamable } from './imprimirstreamable';
+import {busquedaStreamable} from './busquedastreamable';
+import {imprimirStreamable} from './imprimirstreamable';
 import {Streamable} from './streamable';
 
-export abstract class BasicStreamableCollection<T> implements Streamable<T>, busquedaStreamable<T>, imprimirStreamable<T> {
+export abstract class BasicStreamableCollection<T> implements Streamable<T>, busquedaStreamable<T>, imprimirStreamable {
   constructor(public coleccion: T[]) {
   }
 
@@ -16,9 +16,9 @@ export abstract class BasicStreamableCollection<T> implements Streamable<T>, bus
   }
 
   abstract getColeccion(): T[];
-  abstract busqueda(nombre?: string, añoPublicacion?: string): T[] | undefined;
+  abstract busqueda(atributo: string, valor: string | number): T[] | undefined;
 
-  public imprimirColeccion(searchTerm: string): void {
+  public imprimirColeccion(): void {
     console.table(this.coleccion);
   }
 }

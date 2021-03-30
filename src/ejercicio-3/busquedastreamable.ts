@@ -1,3 +1,3 @@
 export interface busquedaStreamable<T> {
-  busqueda(nombre?: string, añoPublicacion?: string): T[] | undefined;
+  busqueda(atributo: string, valor: string | number): T[] | undefined
 }

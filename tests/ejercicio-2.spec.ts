@@ -5,6 +5,7 @@ import {Masa} from '../src/ejercicio-2/masa';
 import {Longitud} from '../src/ejercicio-2/longitud';
 import {Tiempo} from '../src/ejercicio-2/tiempo';
 import {Temperatura} from '../src/ejercicio-2/temperatura';
+import {Fuerza} from '../src/ejercicio-2/fuerza';
 
 describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
   const velocidad1 = new Velocidad(74, "Millas/h");
@@ -173,7 +174,7 @@ describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
 
   const temperatura1 = new Temperatura(74, "Grados Celsius");
   const temperatura2 = new Temperatura(74, "Grados Fahrenheit");
-  const temperaturaerror = new Temperatura(74, "Segundos");
+  const temperaturaerror = new Temperatura(74, "Kelvin");
   describe('Clase Temperatura', () => {
     describe('Funciona los getters y setters', () => {
       it('expect(temperatura1.cantidad).to.be.equal(74);', () => {
@@ -208,6 +209,47 @@ describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
       it('¡ERROR!', () => {
         console.log(`\n`);
         temperaturaerror.conversor("Grados Celsius");
+      });
+    });
+  });
+
+  const fuerza1 = new Fuerza(74, "Kilopondios");
+  const fuerza2 = new Fuerza(74, "Newtons");
+  const fuerzaerror = new Fuerza(74, "N");
+  describe('Clase Fuerza', () => {
+    describe('Funciona los getters y setters', () => {
+      it('expect(fuerza1.cantidad).to.be.equal(74);', () => {
+        expect(fuerza1.cantidad).to.be.equal(74);
+      });
+      it('fuerza2.cantidad = 80;', () => {
+        fuerza2.cantidad = 80;
+        expect(fuerza2.cantidad).to.be.equal(80);
+        fuerza2.cantidad = 74;
+      });
+      it('expect(fuerza1.unidad).to.be.equal("Kilopondios");', () => {
+        expect(fuerza1.unidad).to.be.equal("Kilopondios");
+      });
+      it('fuerza2.unidad = "Kilopondios";', () => {
+        fuerza2.unidad = "Kilopondios";
+        expect(fuerza2.unidad).to.be.equal("Kilopondios");
+        fuerza2.unidad = "Newtons";
+      });
+    });
+
+    describe('Funciona el conversor', () => {
+      it('fuerza1.conversor("Newtons");', () => {
+        fuerza1.conversor("Newtons");
+        expect(Math.trunc(fuerza1.cantidad)).to.be.equal(725);
+        expect(fuerza1.unidad).to.be.equal("Newtons");
+      });
+      it('fuerza2.conversor("Kilopondios");', () => {
+        fuerza2.conversor("Kilopondios");
+        expect(Math.trunc(fuerza2.cantidad)).to.be.equal(7);
+        expect(fuerza2.unidad).to.be.equal("Kilopondios");
+      });
+      it('¡ERROR!', () => {
+        console.log(`\n`);
+        fuerzaerror.conversor("Kilopondios");
       });
     });
   });

@@ -1,3 +1,3 @@
 export interface imprimirStreamable {
-  imprimirEmisiones(): void;
+  imprimirColeccion(): void;
 }

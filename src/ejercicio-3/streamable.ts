@@ -1,6 +1,6 @@
-export interface isConvertible<T> {
+export interface Streamable<T> {
   coleccion: T[]
-  getEmisiones(): T[];
+  getColeccion(): T[];
   añadirEmision(emision: T): void;
   quitarEmision(emision: T): void;
 }

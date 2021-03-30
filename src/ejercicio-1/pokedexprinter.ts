@@ -14,7 +14,7 @@ export class PokedexPrinter {
    *  const pokedexP = new PokedexPrinter(pokedex);
    * ```
    * Constructor de la clase PokedexPrinter
-   * @param personajes Personajes que tendrá la Pokedex
+   * @param pokedex Pokedex que se imprimirá
    */
   constructor(private pokedex: Pokedex) {}
 

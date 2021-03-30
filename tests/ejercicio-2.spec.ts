@@ -2,9 +2,9 @@ import 'mocha';
 import {expect} from 'chai';
 import {Velocidad} from '../src/ejercicio-2/velocidad';
 import {Masa} from '../src/ejercicio-2/masa';
+import {Longitud} from '../src/ejercicio-2/longitud';
 
 describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
-
   const velocidad1 = new Velocidad(74, "Millas/h");
   const velocidad2 = new Velocidad(74, "Kilometros/h");
   const velocidaderror = new Velocidad(74, "Millas/minuto");
@@ -48,7 +48,7 @@ describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
 
   const masa1 = new Masa(74, "Kilogramos");
   const masa2 = new Masa(74000, "Gramos");
-  const masaerror = new Masa(74, "Millas/minuto");
+  const masaerror = new Masa(74, "Miligramos");
   describe('Clase Masa', () => {
     describe('Funciona los getters y setters', () => {
       it('expect(masa1.cantidad).to.be.equal(74);', () => {
@@ -83,6 +83,47 @@ describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
       it('¡ERROR!', () => {
         console.log(`\n`);
         masaerror.conversor("Kilogramos");
+      });
+    });
+  });
+
+  const longitud1 = new Longitud(74, "Metros");
+  const longitud2 = new Longitud(7400, "Centímetros");
+  const longituderror = new Longitud(74, "Milímetros");
+  describe('Clase Longitud', () => {
+    describe('Funciona los getters y setters', () => {
+      it('expect(longitud1.cantidad).to.be.equal(74);', () => {
+        expect(longitud1.cantidad).to.be.equal(74);
+      });
+      it('longitud2.cantidad = 80;', () => {
+        longitud2.cantidad = 80;
+        expect(longitud2.cantidad).to.be.equal(80);
+        longitud2.cantidad = 7400;
+      });
+      it('expect(longitud1.unidad).to.be.equal("Metros");', () => {
+        expect(longitud1.unidad).to.be.equal("Metros");
+      });
+      it('longitud2.unidad = "Metros";', () => {
+        longitud2.unidad = "Metros";
+        expect(longitud2.unidad).to.be.equal("Metros");
+        longitud2.unidad = "Centímetros";
+      });
+    });
+
+    describe('Funciona el conversor', () => {
+      it('longitud1.conversor("Centímetros");', () => {
+        longitud1.conversor("Centímetros");
+        expect(Math.trunc(longitud1.cantidad)).to.be.equal(7400);
+        expect(longitud1.unidad).to.be.equal("Centímetros");
+      });
+      it('longitud2.conversor("Metros");', () => {
+        longitud2.conversor("Metros");
+        expect(Math.trunc(longitud2.cantidad)).to.be.equal(74);
+        expect(longitud2.unidad).to.be.equal("Metros");
+      });
+      it('¡ERROR!', () => {
+        console.log(`\n`);
+        longituderror.conversor("Metros");
       });
     });
   });

@@ -3,6 +3,8 @@ import {expect} from 'chai';
 import {Velocidad} from '../src/ejercicio-2/velocidad';
 import {Masa} from '../src/ejercicio-2/masa';
 import {Longitud} from '../src/ejercicio-2/longitud';
+import {Tiempo} from '../src/ejercicio-2/tiempo';
+import {Temperatura} from '../src/ejercicio-2/temperatura';
 
 describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
   const velocidad1 = new Velocidad(74, "Millas/h");
@@ -124,6 +126,88 @@ describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
       it('¡ERROR!', () => {
         console.log(`\n`);
         longituderror.conversor("Metros");
+      });
+    });
+  });
+
+  const tiempo1 = new Tiempo(74, "Horas");
+  const tiempo2 = new Tiempo(7380, "Minutos");
+  const tiempoerror = new Tiempo(74, "Segundos");
+  describe('Clase Tiempo', () => {
+    describe('Funciona los getters y setters', () => {
+      it('expect(tiempo1.cantidad).to.be.equal(74);', () => {
+        expect(tiempo1.cantidad).to.be.equal(74);
+      });
+      it('tiempo2.cantidad = 80;', () => {
+        tiempo2.cantidad = 80;
+        expect(tiempo2.cantidad).to.be.equal(80);
+        tiempo2.cantidad = 7380;
+      });
+      it('expect(tiempo1.unidad).to.be.equal("Horas");', () => {
+        expect(tiempo1.unidad).to.be.equal("Horas");
+      });
+      it('tiempo2.unidad = "Horas";', () => {
+        tiempo2.unidad = "Horas";
+        expect(tiempo2.unidad).to.be.equal("Horas");
+        tiempo2.unidad = "Minutos";
+      });
+    });
+
+    describe('Funciona el conversor', () => {
+      it('tiempo1.conversor("Minutos");', () => {
+        tiempo1.conversor("Minutos");
+        expect(Math.trunc(tiempo1.cantidad)).to.be.equal(4440);
+        expect(tiempo1.unidad).to.be.equal("Minutos");
+      });
+      it('tiempo2.conversor("Horas");', () => {
+        tiempo2.conversor("Horas");
+        expect(Math.trunc(tiempo2.cantidad)).to.be.equal(123);
+        expect(tiempo2.unidad).to.be.equal("Horas");
+      });
+      it('¡ERROR!', () => {
+        console.log(`\n`);
+        tiempoerror.conversor("Horas");
+      });
+    });
+  });
+
+  const temperatura1 = new Temperatura(74, "Grados Celsius");
+  const temperatura2 = new Temperatura(74, "Grados Fahrenheit");
+  const temperaturaerror = new Temperatura(74, "Segundos");
+  describe('Clase Temperatura', () => {
+    describe('Funciona los getters y setters', () => {
+      it('expect(temperatura1.cantidad).to.be.equal(74);', () => {
+        expect(temperatura1.cantidad).to.be.equal(74);
+      });
+      it('temperatura2.cantidad = 80;', () => {
+        temperatura2.cantidad = 80;
+        expect(temperatura2.cantidad).to.be.equal(80);
+        temperatura2.cantidad = 74;
+      });
+      it('expect(temperatura1.unidad).to.be.equal("Grados Celsius");', () => {
+        expect(temperatura1.unidad).to.be.equal("Grados Celsius");
+      });
+      it('temperatura2.unidad = "Grados Celsius";', () => {
+        temperatura2.unidad = "Grados Celsius";
+        expect(temperatura2.unidad).to.be.equal("Grados Celsius");
+        temperatura2.unidad = "Grados Fahrenheit";
+      });
+    });
+
+    describe('Funciona el conversor', () => {
+      it('temperatura1.conversor("Grados Fahrenheit");', () => {
+        temperatura1.conversor("Grados Fahrenheit");
+        expect(Math.trunc(temperatura1.cantidad)).to.be.equal(165);
+        expect(temperatura1.unidad).to.be.equal("Grados Fahrenheit");
+      });
+      it('temperatura2.conversor("Grados Celsius");', () => {
+        temperatura2.conversor("Grados Celsius");
+        expect(Math.trunc(temperatura2.cantidad)).to.be.equal(23);
+        expect(temperatura2.unidad).to.be.equal("Grados Celsius");
+      });
+      it('¡ERROR!', () => {
+        console.log(`\n`);
+        temperaturaerror.conversor("Grados Celsius");
       });
     });
   });

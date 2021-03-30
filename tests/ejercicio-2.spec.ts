@@ -6,6 +6,7 @@ import {Longitud} from '../src/ejercicio-2/longitud';
 import {Tiempo} from '../src/ejercicio-2/tiempo';
 import {Temperatura} from '../src/ejercicio-2/temperatura';
 import {Fuerza} from '../src/ejercicio-2/fuerza';
+import {Volumen} from '../src/ejercicio-2/volumen';
 
 describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
   const velocidad1 = new Velocidad(74, "Millas/h");
@@ -250,6 +251,47 @@ describe('Pruebas del Ejercicio 2 - Conversor de unidades', () => {
       it('¡ERROR!', () => {
         console.log(`\n`);
         fuerzaerror.conversor("Kilopondios");
+      });
+    });
+  });
+
+  const volumen1 = new Volumen(74, "Litros");
+  const volumen2 = new Volumen(74000, "Mililitros");
+  const volumenerror = new Volumen(74, "N");
+  describe('Clase Volumen', () => {
+    describe('Funciona los getters y setters', () => {
+      it('expect(volumen1.cantidad).to.be.equal(74);', () => {
+        expect(volumen1.cantidad).to.be.equal(74);
+      });
+      it('volumen2.cantidad = 80;', () => {
+        volumen2.cantidad = 80;
+        expect(volumen2.cantidad).to.be.equal(80);
+        volumen2.cantidad = 74000;
+      });
+      it('expect(volumen1.unidad).to.be.equal("Litros");', () => {
+        expect(volumen1.unidad).to.be.equal("Litros");
+      });
+      it('volumen2.unidad = "Litros";', () => {
+        volumen2.unidad = "Litros";
+        expect(volumen2.unidad).to.be.equal("Litros");
+        volumen2.unidad = "Mililitros";
+      });
+    });
+
+    describe('Funciona el conversor', () => {
+      it('volumen1.conversor("Mililitros");', () => {
+        volumen1.conversor("Mililitros");
+        expect(Math.trunc(volumen1.cantidad)).to.be.equal(74000);
+        expect(volumen1.unidad).to.be.equal("Mililitros");
+      });
+      it('volumen2.conversor("Litros");', () => {
+        volumen2.conversor("Litros");
+        expect(Math.trunc(volumen2.cantidad)).to.be.equal(74);
+        expect(volumen2.unidad).to.be.equal("Litros");
+      });
+      it('¡ERROR!', () => {
+        console.log(`\n`);
+        volumenerror.conversor("Litros");
       });
     });
   });

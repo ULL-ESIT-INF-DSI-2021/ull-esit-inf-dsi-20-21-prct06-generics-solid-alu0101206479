@@ -7,6 +7,7 @@ import {StarWars} from '../src/ejercicio-1/starwars';
 import {DragonBall} from '../src/ejercicio-1/dragonball';
 import {Combat} from '../src/ejercicio-1/combat';
 import {Pokedex} from '../src/ejercicio-1/pokedex';
+import {PokedexPrinter} from '../src/ejercicio-1/pokedexprinter';
 
 describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
   const Venusaur = new Pokemon("Venusaur", 100, 2.0, "Planta", [82, 83, 80, 80], "SAURRR!");
@@ -175,6 +176,16 @@ describe('Pruebas del Ejercicio 1 - El combate definitivo', () => {
       it('pokedex.quitarPersonaje(Goku);', () => {
         pokedex.quitarPersonaje(Goku);
         expect(pokedex.getPersonajes()).to.deep.equal([Venusaur, Ironman, Yoda, Batman]);
+      });
+    });
+  });
+
+  const pokedexP = new PokedexPrinter(pokedex);
+  describe('Clase PokedexPrinter', () => {
+    describe('Se puede imprimir la Pokedex', () => {
+      it('pokedexP.mostrar();', () => {
+        console.log(`Pokedex\n`);
+        pokedexP.mostrar();
       });
     });
   });

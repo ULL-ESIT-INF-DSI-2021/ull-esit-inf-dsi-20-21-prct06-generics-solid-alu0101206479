@@ -296,3 +296,122 @@ Las pruebas de este ejercicio se pueden observar en el siguiente enlace:
 Y la salida de estas pruebas al ejecutar `npm run test` debería ser la siguiente:
 
   ![Salida del npm run test del ejercicio 2](src/pruebaejercicio2.png)
+
+
+
+##### Ejercicio 3 - DSIflix
+En este ejercicio deberemos de crear las siguientes clases, interfaces y tipos:
+  * Interfaz genérica `Streamable`: Interfaz que sirve para especificar las propiedades y los métodos de una colección de emisiones concreta, su código lo podemos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/streamable.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/streamable.ts)
+      
+    Esta interfaz contendrá el siguiente atributo:
+      * `colección`: Atributo que almacenará todas las emisiones de la colección (T[])
+
+    Y contendrá las funciónes:
+      * `getColeccion()`: Función para obtener el atributo `coleccion`
+      * `añadirEmision(emision: T)`: Función para añadir una emision a la colección
+      * `quitarEmision(emision: T)`: Función para quitar una emisión de la colección
+
+
+  * Interfaz genérica `busquedaStreamable`: Es una interfaz que sirve para definir el método para hacer la busqueda de elementos en una colección, esta interfaz se hizo para cumplir el **principio I (Interface segregation) de los principios SOLID** y no hacer tan compleja la interfaz `Streamable`. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/busquedastreamable.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/busquedastreamable.ts)
+      
+    Esta interfaz contendrá la función:
+      * `busqueda(atributo: string, valor: string | number)`: Función para buscar emisiones concretas el atributo `coleccion` a través de algo en concreto.
+
+
+  * Interfaz `imprimirStreamable`: Es una interfaz que sirve para definir el método para imprimir los elementos de una colección, esta interfaz se hizo para cumplir el **principio I (Interface segregation) de los principios SOLID** y no hacer tan compleja la interfaz `Streamable`. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/imprimirstreamable.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/imprimirstreamable.ts)
+      
+    Esta interfaz contendrá la función:
+      * `imprimirColeccion()`: Función para imprimir los elementos de la colección.
+
+
+  * Clase abstracta genérica `BasicStreamableCollection`: Es una clase abstracta genérica que implementa y desarrolla las interfaces `Streamable`, `busquedaStreamable` y `imiprimirStreamable`. Esta clase será padre de las clases que quieran representar una colección de emisiones concreta. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecolection.ts)
+      
+    Esta clase contendrá el siguiente atributo (extraido de la interfaz `Streamable`):
+      * `colección`: Atributo que almacenará todas las emisiones de la colección (T[])
+
+    Y contendrá las siguientes funciones (extraidas de las interfaces `Streamable`, `busquedaStreamable` y `imprimirStreamable`:
+      * `añadirEmision(emision: T)`: Función para añadir una emision a la colección
+      * `quitarEmision(emision: T)`: Función para quitar una emisión de la colección
+      * `abstract getColeccion()`: Función abstracta que cuando se desarrolle retornará  el atributo coleccion
+      * `abstract busqueda(atributo: string, valor: string | number)`: Función abstracta que sirve para buscar emisiones concreta según el criterio elegido, dentro de la colección
+      * `imprimirColeccion()`: Función que muestra en una tabla las emisiones de la colección
+
+
+  * Tipo `serie`: Es una tipo que representa una serie. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/seriecollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/seriecollection.ts)
+      
+    Este tipo contendrá las propiedades:
+      * `nombre`: Nombre de la serie (String)
+      * `añoPublicacion`: Año de publicación de la serie (Number)
+      * `temporadas`: Temporadas de la serie (Number)
+
+
+  * Clase `SerieCollection`: Es una clase que representa una colección de series, clase hija de la clase `BasicStreamableCollection`. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/seriecollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecolection.ts)
+      
+    Esta clase al ser hija de la clase `BasicStreamableCollection`, se heredará en el costructor a través de la función `super` el atributo de la clase padre (`coleccion`).
+    
+    Cabe destacar que en esta clase desarrollaremos las funciones abstractas de la clase padre, que son las siguientes:
+      * `getColeccion()`: Funcion que retorna el atributo `coleccion`
+      * `busqueda(atributo: string, valor: string | number)`: Función para buscar series concretas en la colección a través del nombre, el año de publicación o el número de temporadas. Esto se hace con un bucle `forEach` que recorre la colección y diversos condicionales. Finalmente se muestra en una tabla el resultado de la búsqueda y lo retorna.
+
+
+  * Tipo `pelicula`: Es una tipo que representa una pelicula. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts)
+      
+    Este tipo contendrá las propiedades:
+      * `nombre`: Nombre de la pelicula (String)
+      * `añoPublicacion`: Año de publicación de la pelicula (Number)
+      * `duracionMinutos`: Duración en minutos de la película (Number)
+
+
+  * Clase `PeliculaCollection`: Es una clase que representa una colección de peliculas, clase hija de la clase `BasicStreamableCollection`. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts)
+      
+    Esta clase al ser hija de la clase `BasicStreamableCollection`, se heredará en el costructor a través de la función `super` el atributo de la clase padre (`coleccion`).
+    
+    Cabe destacar que en esta clase desarrollaremos las funciones abstractas de la clase padre, que son las siguientes:
+      * `getColeccion()`: Funcion que retorna el atributo `coleccion`
+      * `busqueda(atributo: string, valor: string | number)`: Función para buscar peliculas concretas en la colección a través del nombre, el año de publicación o la duración. Esto se hace con un bucle `forEach` que recorre la colección y diversos condicionales. Finalmente se muestra en una tabla el resultado de la búsqueda y lo retorna.
+
+
+  * Tipo `pelicula`: Es una tipo que representa una pelicula. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts)
+      
+    Este tipo contendrá las propiedades:
+      * `nombre`: Nombre de la pelicula (String)
+      * `añoPublicacion`: Año de publicación de la pelicula (Number)
+      * `duracionMinutos`: Duración en minutos de la película (Number)
+
+
+  * Clase `DocumentalCollection`: Es una clase que representa una colección de documentales, clase hija de la clase `BasicStreamableCollection`. Su código lo podremos observar en el siguiente enlace:
+
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/documentalcollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/documentalcollection.ts)
+      
+    Esta clase al ser hija de la clase `BasicStreamableCollection`, se heredará en el costructor a través de la función `super` el atributo de la clase padre (`coleccion`).
+    
+    Cabe destacar que en esta clase desarrollaremos las funciones abstractas de la clase padre, que son las siguientes:
+      * `getColeccion()`: Funcion que retorna el atributo `coleccion`
+      * `busqueda(atributo: string, valor: string | number)`: Función para buscar documentales concretos en la colección a través del nombre, el año de publicación o la duración. Esto se hace con un bucle `forEach` que recorre la colección y diversos condicionales. Finalmente se muestra en una tabla el resultado de la búsqueda y lo retorna.
+
+
+Las pruebas de este ejercicio se pueden observar en el siguiente enlace:
+
+  [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/tests/ejercicio-3.spec.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/tests/ejercicio-3.spec.ts)
+  
+Y la salida de estas pruebas al ejecutar `npm run test` debería ser la siguiente:
+
+  ![Salida del npm run test del ejercicio 3](src/pruebaejercicio3.png)

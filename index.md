@@ -332,7 +332,7 @@ En este ejercicio deberemos de crear las siguientes clases, interfaces y tipos:
 
   * Clase abstracta genérica `BasicStreamableCollection`: Es una clase abstracta genérica que implementa y desarrolla las interfaces `Streamable`, `busquedaStreamable` y `imiprimirStreamable`. Esta clase será padre de las clases que quieran representar una colección de emisiones concreta. Su código lo podremos observar en el siguiente enlace:
 
-      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecolection.ts)
+      [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/basicstreamablecollection.ts)
       
     Esta clase contendrá el siguiente atributo (extraido de la interfaz `Streamable`):
       * `colección`: Atributo que almacenará todas las emisiones de la colección (T[])

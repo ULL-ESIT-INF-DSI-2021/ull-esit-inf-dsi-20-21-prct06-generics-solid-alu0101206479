@@ -345,7 +345,7 @@ En este ejercicio deberemos de crear las siguientes clases, interfaces y tipos:
       * `imprimirColeccion()`: Función que muestra en una tabla las emisiones de la colección
 
 
-  * Tipo `serie`: Es una tipo que representa una serie. Su código lo podremos observar en el siguiente enlace:
+  * Tipo `serie`: Es un tipo que representa una serie. Su código lo podremos observar en el siguiente enlace:
 
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/seriecollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/seriecollection.ts)
       
@@ -366,7 +366,7 @@ En este ejercicio deberemos de crear las siguientes clases, interfaces y tipos:
       * `busqueda(atributo: string, valor: string | number)`: Función para buscar series concretas en la colección a través del nombre, el año de publicación o el número de temporadas. Esto se hace con un bucle `forEach` que recorre la colección y diversos condicionales. Finalmente se muestra en una tabla el resultado de la búsqueda y lo retorna.
 
 
-  * Tipo `pelicula`: Es una tipo que representa una pelicula. Su código lo podremos observar en el siguiente enlace:
+  * Tipo `pelicula`: Es un tipo que representa una pelicula. Su código lo podremos observar en el siguiente enlace:
 
       [https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-alu0101206479/blob/master/src/ejercicio-3/peliculacollection.ts)
       

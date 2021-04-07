@@ -2,11 +2,11 @@
  * Clase que representa una cantidad de longitud
  */
 export class ImperialLength {
+  private cantidad: number
   /**
-   * Constructor de la clase ImperialLength, se pasa como parametro al cantidad de longitud en pulgadas
-   * @param cantidad Cantidad de longitud en pulgadas
+   * Constructor de la clase ImperialLength vacío
    */
-  constructor(private cantidad: number) {}
+  constructor() {}
 
   /**
    * Función que me devuelve la cantidad en pulgadas
@@ -14,6 +14,14 @@ export class ImperialLength {
    */
   getLongitudEnPulgadas() {
     return this.cantidad;
+  }
+
+  /**
+   * FUnción que me almacena una cantidad de pies en pulgadas
+   * @param cantidad Cantidad de longitud en pies
+   */
+  setPulgadas(cantidad: number) {
+    this.cantidad = cantidad;
   }
 
   /**
@@ -25,6 +33,14 @@ export class ImperialLength {
   }
 
   /**
+   * FUnción que me almacena una cantidad de pies en pulgadas
+   * @param cantidad Cantidad de longitud en pies
+   */
+  setPies(cantidad: number) {
+    this.cantidad = cantidad*12;
+  }
+
+  /**
    * Función que me devuelve la cantidad en yardas
    * @returns El atributo cantidad/36, porque está seria la conversión de pulgadas a yardas
    */
@@ -33,10 +49,27 @@ export class ImperialLength {
   }
 
   /**
+   * FUnción que me almacena una cantidad de yardas en pulgadas
+   * @param cantidad Cantidad de longitud en yardas
+   */
+  setYardas(cantidad: number) {
+    this.cantidad = cantidad*36;
+  }
+
+  /**
    * Función que me devuelve la cantidad en millas
    * @returns El atributo cantidad/63360, porque está seria la conversión de pulgadas a millas
    */
   getLongitudEnMillas() {
     return this.cantidad/63360;
+  }
+
+  /**
+   * FUnción que me almacena una cantidad de millas en pulgadas
+   * @param cantidad Cantidad de longitud en millas
+   */
+  setMillas(cantidad: number) {
+    this.cantidad = cantidad*63360
+    ;
   }
 }

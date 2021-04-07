@@ -6,7 +6,7 @@ export class MetricLength {
    * Constructor de la clase MetricLength, se pasa como parametro la cantidad de longitud en centímetros
    * @param cantidad Cantidad de longitud en centímetros
    */
-  constructor(private cantidad: number) {}
+  constructor(private cantidad: number = 100) {}
 
   /**
    * Función que me devuelve la cantidad en centímetros
